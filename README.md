@@ -13,8 +13,11 @@
 
 6. Connect to AWS
   - `aws configure`
-  - Enter api key and secret
+  -- Enter api key and secret
+  -- Region: `us-east-1`
+  -- Format: `json`
   - Example AWS commands
   -- Get s3 buckets: `aws s3 ls`
   -- List items in bucket _i_: `aws s3 ls _i_`
   -- Copy item locally to bucket _i_: `aws s3 cp _path_ s3://_i_/_path_`
+  -- Sync site: `aws s3 sync /home/imagenamer/site/. s3://_i_/.`
