@@ -1,9 +1,9 @@
 import boto3
 
 BUCKET = "timtam-img"
-KEY = "test.jpg"
+KEY = "ScreenShot.png"
 
-def detect_labels(bucket, key, max_labels=10, min_confidence=90, region="us-east-1"):
+def detect_labels(bucket, key, max_labels=30, min_confidence=50, region="us-east-1"):
 	rekognition = boto3.client("rekognition", region)
 	response = rekognition.detect_labels(
 		Image={
