@@ -1,9 +1,9 @@
 import boto3
 
-BUCKET = "amazon-rekognition"
+BUCKET = "timtam-img"
 KEY = "test.jpg"
 
-def detect_labels(bucket, key, max_labels=10, min_confidence=90, region="eu-west-1"):
+def detect_labels(bucket, key, max_labels=10, min_confidence=90, region="us-east-1"):
 	rekognition = boto3.client("rekognition", region)
 	response = rekognition.detect_labels(
 		Image={
@@ -19,7 +19,7 @@ def detect_labels(bucket, key, max_labels=10, min_confidence=90, region="eu-west
 
 
 for label in detect_labels(BUCKET, KEY):
-	print "{Name} - {Confidence}%".format(**label)
+	print("{Name} - {Confidence}%").format(**label)
 
 """
 	Expected output:
